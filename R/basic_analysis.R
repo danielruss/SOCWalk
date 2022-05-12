@@ -80,6 +80,16 @@ nest_results <- function(data,cols,new_col_name,n=3){
     tidyr::nest({{ new_col_name}}:=c('code','score'))
 }
 
+#' Title
+#'
+#' @param xw The crosswalk
+#' @param sw_input   the input for SOCWalk
+#' @param sw_results  The socwalk results
+#' @param n  the number of top responses from socwalk to maintain
+#'
+#' @return a tibble of socwalk results..
+#' @export
+#'
 model_analysis <- function(xw,sw_input,sw_results,n=3){
 
   ######
