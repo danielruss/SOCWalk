@@ -18,7 +18,7 @@ top_n_results(data, col, codes_to, score_to, n = 3)
 \item{n}{n}
 }
 \value{
-
+a mutated copy of the data
 }
 \description{
 returns the top n results from a nested data frame

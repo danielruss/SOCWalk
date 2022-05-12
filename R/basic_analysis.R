@@ -1,3 +1,9 @@
+## this is really ugly: I get warning if these variable (columns from a data frame)
+## are not declared as global variables.
+utils::globalVariables(c("11-1011", "99-9999","soccer_results","soccer_codes",
+                         "noc2011","sw_codes","soc2010","crosswalked_codes",
+                         "Id","soccer_scores","score","sw_scores"))
+
 #' returns the top n results from a nested data frame
 #'
 #' @param data  data
@@ -6,7 +12,8 @@
 #' @param score_to ss
 #' @param n n
 #'
-#' @return
+#' @return a mutated copy of the data
+#' @importFrom rlang :=
 #' @export
 #'
 top_n_results <- function(data,col,codes_to,score_to,n=3){
@@ -19,13 +26,13 @@ top_n_results <- function(data,col,codes_to,score_to,n=3){
   )
 }
 
-#' wraps %in% function for use in pipe useful
+#' wraps in function for use in pipe useful
 #'
 #' @param col1 col1
 #' @param col2 col2
-#' @param top top
+#' @param top if TRUE, return TRUE only if the top scoring code is in col2
 #'
-#' @return
+#' @return whether or not the value(s) from col1 is in col2
 #' @export
 #'
 is_in <- function(col1,col2,top=FALSE){
@@ -64,16 +71,14 @@ soc_agree_2d <- soc_agree(2)
 
 #' Nest SOCwalk results
 #'
-#' @param data
-#' @param cols
-#' @param new_col_name
-#' @param n
+#' @param data the data
+#' @param cols the cols you want to nest
+#' @param new_col_name the col name for the nested data
 #'
-#' @return
+#' @return a tibble with the data nested
 #' @export
-#'
-#' @examples
-nest_results <- function(data,cols,new_col_name,n=3){
+#' @importFrom rlang :=
+nest_results <- function(data,cols,new_col_name){
   data %>%
     tidyr::pivot_longer({{cols}}, names_to = "code",values_to = "score") %>%
     dplyr::group_by(Id) %>%
@@ -89,7 +94,7 @@ nest_results <- function(data,cols,new_col_name,n=3){
 #'
 #' @return a tibble of socwalk results..
 #' @export
-#'
+#' @importFrom rlang :=
 model_analysis <- function(xw,sw_input,sw_results,n=3){
 
   ######

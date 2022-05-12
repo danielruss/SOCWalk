@@ -2,7 +2,10 @@
 
 export("%>%")
 export(is_in)
+export(model_analysis)
+export(nest_results)
 export(soc_agree_2d)
 export(soc_agree_3d)
 export(top_n_results)
 importFrom(magrittr,"%>%")
+importFrom(rlang,":=")

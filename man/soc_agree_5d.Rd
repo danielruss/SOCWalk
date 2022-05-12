@@ -13,11 +13,11 @@ soc_agree_3d(col1, col2, top = FALSE)
 soc_agree_2d(col1, col2, top = FALSE)
 }
 \arguments{
-\item{col1}{the col}
+\item{col1}{String -- The column title of SOCWalk codes}
 
-\item{col2}{abitger}
+\item{col2}{String -- The column of expert assigned codes}
 
-\item{top}{ddd}
+\item{top}{logical -- Should we only include the top SOCWalk code (default=FALSE)}
 }
 \value{
 rv

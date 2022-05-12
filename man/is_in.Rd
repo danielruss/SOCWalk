@@ -2,7 +2,7 @@
 % Please edit documentation in R/basic_analysis.R
 \name{is_in}
 \alias{is_in}
-\title{wraps %in% function for use in pipe useful}
+\title{wraps in function for use in pipe useful}
 \usage{
 is_in(col1, col2, top = FALSE)
 }
@@ -11,11 +11,11 @@ is_in(col1, col2, top = FALSE)
 
 \item{col2}{col2}
 
-\item{top}{top}
+\item{top}{if TRUE, return TRUE only if the top scoring code is in col2}
 }
 \value{
-
+whether or not the value(s) from col1 is in col2
 }
 \description{
-wraps %in% function for use in pipe useful
+wraps in function for use in pipe useful
 }

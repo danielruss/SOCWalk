@@ -1,7 +1,7 @@
 Package: SOCWalk
 Type: Package
 Title: Analysis of SOCWalk Crosswalking Results
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: person("Daniel","Russ", email="druss@mail.nih.gov",role=c("aut","cre"))
 Maintainer: Daniel Russ <druss@mail.nih.gov>
 Description: A package that help wrangle data that comes out of the 
@@ -15,6 +15,8 @@ Imports:
     jsonlite,
     magrittr,
     purrr,
+    rlang,
     socR,
     stringr,
-    tidyr
+    tidyr,
+    utils
