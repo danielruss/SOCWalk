@@ -1,7 +1,7 @@
 Package: SOCWalk
 Type: Package
 Title: Analysis of SOCWalk Crosswalking Results
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: person("Daniel","Russ", email="druss@mail.nih.gov",role=c("aut","cre"))
 Maintainer: Daniel Russ <druss@mail.nih.gov>
 Description: A package that help wrangle data that comes out of the 
